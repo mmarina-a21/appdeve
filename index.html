@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Risk Factors Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chroma-js@2.1.0/chroma.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="logo" class="logo">
+            <h1>Death Risks 1990-2017</h1>
+            <select id="yearSelect">
+                <!-- Options will be populated dynamically -->
+            </select>
+            <select id="countrySelect">
+                <!-- Options will be populated dynamically -->
+            </select>
+        </header>
+        <div id="charts">
+            <section class="chart-card">
+                <h2>Deaths by Risk Factor Line Chart</h2>
+                <canvas id="lineChart"></canvas>
+            </section>
+            <section class="chart-card">
+                <h2>Deaths by Risk Factor Bar Chart</h2>
+                <canvas id="barChart"></canvas>
+            </section>
+            <section class="chart-card" style="flex: 1 1 100%; max-width: 100%;">
+                <h2><div class="cent"> Death Risk Per Country</div></h2>
+                <select id="riskFactorSelect">
+                    <!-- Options will be populated dynamically -->
+                </select>
+                <div id="mapContainer"></div>
+            </section>
+        </div>
+    </div>
+    <script src="chart-handlers.js"></script>
+</body>
+</html>
